@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Search, Menu, X, Code2, Layers, Smartphone, Download } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { FluxUILogo3D } from "@/components/fluxui-logo-3d";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -62,10 +63,8 @@ export function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary">
-              <Code2 className="h-5 w-5 text-primary-foreground" />
-            </div>
+          <Link href="/" className="flex items-center gap-3">
+            <FluxUILogo3D size={48} />
             <span className="text-xl font-bold tracking-tight text-foreground">
               Flux<span className="text-primary">UI</span>
             </span>
