@@ -184,28 +184,23 @@ const metadata = {
     icons: {
         icon: [
             {
-                url: "/favicon.png",
-                type: "image/png",
-                sizes: "48x48"
+                url: "/favicon.svg",
+                type: "image/svg+xml",
+                sizes: "any"
             },
             {
                 url: "/icon-only.png",
                 type: "image/png",
                 sizes: "1024x1024"
-            },
-            {
-                url: "/logo-192.png",
-                type: "image/png",
-                sizes: "192x192"
             }
         ],
         apple: [
             {
-                url: "/apple-touch-icon.png",
+                url: "/apple-touch-icon.svg",
                 sizes: "180x180"
             }
         ],
-        shortcut: "/favicon.png"
+        shortcut: "/favicon.svg"
     },
     manifest: "/manifest.json",
     openGraph: {
@@ -260,23 +255,23 @@ function RootLayout({ children }) {
                     children,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$back$2d$to$2d$top$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BackToTop"], {}, void 0, false, {
                         fileName: "[project]/app/layout.tsx",
-                        lineNumber: 94,
+                        lineNumber: 93,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/layout.tsx",
-                lineNumber: 92,
+                lineNumber: 91,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/layout.tsx",
-            lineNumber: 91,
+            lineNumber: 90,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/layout.tsx",
-        lineNumber: 86,
+        lineNumber: 85,
         columnNumber: 5
     }, this);
 }
