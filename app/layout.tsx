@@ -13,9 +13,9 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata = {
-  title: "FluxUI - Developer Resources & UI Components Hub",
+  title: "FluxUI - Modern UI Components Framework",
   description:
-    "Browse, preview, and download premium UI components and developer resources. Elevate your workflow with free, high-quality React components and projects.",
+    "Browse, preview, and download premium UI components and developer resources. The Future of Modern UI Components.",
   keywords: [
     "UI components",
     "React components",
@@ -23,20 +23,42 @@ export const metadata = {
     "Next.js templates",
     "free downloads",
     "frontend development",
+    "FluxUI",
   ],
   authors: [{ name: "FluxUI" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon-only.png", sizes: "1024x1024" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180" },
+    ],
+    shortcut: "/favicon.ico",
+  },
+  manifest: "/manifest.json",
   openGraph: {
-    title: "FluxUI - Developer Resources & UI Components Hub",
+    title: "FluxUI - Modern UI Components Framework",
     description:
-      "Browse, preview, and download premium UI components and developer resources.",
+      "Browse, preview, and download premium UI components and developer resources. The Future of Modern UI Components.",
     type: "website",
     locale: "en_US",
+    siteName: "FluxUI",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "FluxUI - Modern UI Components Framework",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FluxUI - Developer Resources & UI Components Hub",
+    title: "FluxUI - Modern UI Components Framework",
     description:
       "Browse, preview, and download premium UI components and developer resources.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Code2 } from "lucide-react";
+import { FluxUILogo3D } from "@/components/fluxui-logo-3d";
 import { Separator } from "@/components/ui/separator";
 
 const footerLinks = {
@@ -61,13 +61,18 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
           {/* Brand Column */}
           <div className="col-span-2">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary">
-                <Code2 className="h-5 w-5 text-primary-foreground" />
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="opacity-80 group-hover:opacity-100 transition-opacity">
+                <FluxUILogo3D className="w-10 h-10" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-foreground">
-                Flux<span className="text-primary">UI</span>
-              </span>
+              <div>
+                <span className="text-xl font-bold tracking-tight text-foreground">
+                  Flux<span className="text-primary">UI</span>
+                </span>
+                <p className="text-xs text-muted-foreground -mt-0.5">
+                  The Future of Modern UI Components
+                </p>
+              </div>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Premium UI components and developer resources. Build stunning
