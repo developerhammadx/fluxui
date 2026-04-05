@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
-import { getPostById } from "@/lib/data/posts";
+import { getPostById, getAllPosts } from "@/lib/data/posts";
 
 export const dynamic = "force-static";
+
+// Generate static params for all posts
+export function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    id: post.id,
+  }));
+}
 
 export async function GET(
   request: Request,
