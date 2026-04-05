@@ -1,10 +1,10 @@
 import { ComponentDetail } from "@/components/component-detail";
-import { resources } from "@/lib/data/resources";
+import { componentsData } from "@/lib/data/componentsData";
 
-// Generate static params for build time dynamically from resources
+// Generate static params for build time dynamically from components
 export function generateStaticParams() {
-  return resources.map((resource) => ({
-    id: resource.id,
+  return componentsData.map((component) => ({
+    id: component.id,
   }));
 }
 

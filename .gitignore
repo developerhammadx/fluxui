@@ -18,6 +18,9 @@
 # production
 /build
 
+# development build files
+/dist/
+
 # misc
 .DS_Store
 *.pem

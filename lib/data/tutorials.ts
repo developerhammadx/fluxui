@@ -11,14 +11,16 @@ export interface Tutorial {
   codeExamples: { title: string; language: string; code: string; explanation?: string }[];
   bestPractices: string[];
   relatedTutorials: string[];
+  nextTutorial?: string;
+  prevTutorial?: string;
 }
 
 export const tutorials: Tutorial[] = [
   {
     id: "1",
-    slug: "react-hooks-masterclass",
-    title: "React Hooks Masterclass",
-    description: "Master useEffect and build powerful custom hooks for your React applications.",
+    slug: "mastering-react-hooks",
+    title: "Mastering React Hooks",
+    description: "Deep dive into useState, useEffect, and custom hooks. Learn advanced patterns for state management and side effects in modern React applications with real-world examples.",
     category: "React",
     readTime: "15 min",
     difficulty: "Intermediate",
@@ -36,6 +38,10 @@ export const tutorials: Tutorial[] = [
         title: "Custom Hook Patterns", 
         description: "Extracting reusable logic into custom hooks promotes code reuse and separation of concerns." 
       },
+      {
+        title: "useMemo and useCallback",
+        description: "Optimize performance by memoizing expensive computations and callback functions."
+      }
     ],
     codeExamples: [
       {
@@ -98,10 +104,7 @@ function useLocalStorage<T>(key: string, initialValue: T) {
     try {
       const valueToStore = value instanceof Function ? value(storedValue) : value;
       setStoredValue(valueToStore);
-      
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem(key, JSON.stringify(valueToStore));
-      }
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
     } catch (error) {
       console.error('Error saving to localStorage:', error);
     }
@@ -113,42 +116,52 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 // Usage
 function App() {
   const [theme, setTheme] = useLocalStorage('theme', 'dark');
-  return <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>Toggle</button>;
+  return (
+    <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+      Current theme: {theme}
+    </button>
+  );
 }`,
-        explanation: "Custom hooks should start with 'use' and can call other hooks. Handle SSR gracefully."
+        explanation: "Custom hooks extract reusable logic. They follow the same rules as React hooks and must start with 'use'."
       }
     ],
     bestPractices: [
-      "Always specify all dependencies in the useEffect array to prevent stale closures",
-      "Use useCallback for functions passed to child components or stored in dependencies",
-      "Implement cleanup functions for subscriptions, timers, and event listeners",
-      "Keep hooks pure - avoid side effects in the render phase",
-      "Extract complex logic into custom hooks for reusability",
+      "Always include all dependencies in the useEffect dependency array",
+      "Use AbortController to cancel fetch requests on cleanup",
+      "Initialize state with a function for expensive calculations",
+      "Keep custom hooks focused on a single responsibility",
+      "Use useMemo for expensive computations that don't need to recalculate often",
+      "Use useCallback for functions passed as props to child components"
     ],
-    relatedTutorials: ["nextjs-app-router", "performance-optimization"],
+    relatedTutorials: ["nextjs-app-router-guide", "performance-optimization"],
+    nextTutorial: "nextjs-app-router-guide"
   },
   {
     id: "2",
-    slug: "nextjs-app-router",
-    title: "Next.js App Router Deep Dive",
-    description: "Understanding Server Components vs Client Components in Next.js 13+",
+    slug: "nextjs-app-router-guide",
+    title: "Next.js App Router Guide",
+    description: "Master Server Components, Client Components, and the App Router architecture for building scalable Next.js applications.",
     category: "Next.js",
-    readTime: "20 min",
+    readTime: "18 min",
     difficulty: "Advanced",
-    introduction: "The Next.js App Router introduces a new paradigm with React Server Components. Understanding when to use Server vs Client Components is essential for building high-performance Next.js applications with optimal bundle sizes.",
+    introduction: "Next.js 13+ introduced the App Router, a new paradigm that leverages React Server Components for improved performance. This guide covers Server vs Client components, file-based routing, and generateStaticParams for static generation.",
     coreConcepts: [
-      { 
-        title: "Server Components (RSC)", 
-        description: "Run exclusively on the server, can access backend resources directly, and send zero JavaScript to the client." 
+      {
+        title: "Server Components",
+        description: "Server Components run exclusively on the server, reducing client-side JavaScript and improving initial load times."
       },
-      { 
-        title: "Client Components", 
-        description: "Traditional React components that run in the browser, can use hooks and browser APIs." 
+      {
+        title: "Client Components",
+        description: "Add 'use client' directive for components that need browser APIs, hooks, or event handlers."
       },
-      { 
-        title: "Component Boundaries", 
-        description: "Strategic placement of 'use client' directives to minimize client-side JavaScript." 
+      {
+        title: "File-Based Routing",
+        description: "Folders define routes, page.tsx defines UI, and layout.tsx provides shared layouts."
       },
+      {
+        title: "generateStaticParams",
+        description: "Pre-render dynamic routes at build time for static export with output: 'export'."
+      }
     ],
     codeExamples: [
       {
@@ -237,36 +250,43 @@ export function AddToCartButton({ productId }: { productId: string }) {
       }
     ],
     bestPractices: [
-      "Start with Server Components by default - only add 'use client' when necessary",
-      "Move Client Components down the tree to minimize client JavaScript bundle",
-      "Use Server Components for data fetching, database queries, and backend-only logic",
-      "Pass Server Component children to Client Components for composition patterns",
-      "Leverage streaming and Suspense boundaries for progressive loading",
+      "Use Server Components by default for better performance",
+      "Keep Client Components as low in the tree as possible",
+      "Use generateStaticParams for dynamic routes with static export",
+      "Leverage layout.tsx for shared UI across route segments",
+      "Implement loading.tsx and error.tsx for better UX",
+      "Use revalidate for Incremental Static Regeneration (ISR)"
     ],
-    relatedTutorials: ["react-hooks-masterclass", "performance-optimization"],
+    relatedTutorials: ["mastering-react-hooks", "performance-optimization"],
+    prevTutorial: "mastering-react-hooks",
+    nextTutorial: "ai-integration-for-developers"
   },
   {
     id: "3",
-    slug: "ai-integration",
-    title: "AI Integration with Next.js",
-    description: "Build intelligent apps using OpenAI API and Vercel AI SDK",
-    category: "AI/ML",
-    readTime: "18 min",
+    slug: "ai-integration-for-developers",
+    title: "AI Integration for Developers",
+    description: "Learn how to integrate OpenAI, LangChain, and other AI tools into your web applications. Build intelligent chatbots, content generators, and automated workflows.",
+    category: "AI",
+    readTime: "20 min",
     difficulty: "Intermediate",
-    introduction: "Integrating AI into web applications has never been easier. With the Vercel AI SDK and OpenAI's powerful models, you can build chatbots, content generators, and intelligent assistants with streaming responses and great UX.",
+    introduction: "AI is transforming software development. From intelligent chatbots to content generation, integrating AI can elevate your applications. Learn to use Vercel AI SDK, OpenAI API, and prompt engineering for production-ready AI features.",
     coreConcepts: [
-      { 
-        title: "Streaming Responses", 
-        description: "Stream AI responses in real-time for better perceived performance and UX." 
+      {
+        title: "Vercel AI SDK",
+        description: "Simplifies building streaming text and chat UIs with React hooks like useChat and useCompletion."
       },
-      { 
-        title: "Prompt Engineering", 
-        description: "Craft effective prompts with context, examples, and constraints for better AI outputs." 
+      {
+        title: "OpenAI API Integration",
+        description: "Direct API access to GPT-4, GPT-3.5, and other models for text generation, embeddings, and more."
       },
-      { 
-        title: "AI SDK Hooks", 
-        description: "useChat and useCompletion hooks handle state management and streaming automatically." 
+      {
+        title: "Prompt Engineering",
+        description: "Craft effective prompts to get better, more consistent AI responses."
       },
+      {
+        title: "Streaming Responses",
+        description: "Stream AI responses to the UI for better perceived performance and user experience."
+      }
     ],
     codeExamples: [
       {
@@ -350,13 +370,16 @@ export function ChatInterface() {
       }
     ],
     bestPractices: [
-      "Always stream responses for better UX instead of waiting for full generation",
-      "Implement rate limiting and token quotas to prevent abuse and control costs",
-      "Use system prompts to constrain AI behavior and set context",
-      "Store conversation history for multi-turn interactions",
-      "Handle errors gracefully and provide fallback responses",
+      "Always validate and sanitize AI-generated content before displaying",
+      "Implement rate limiting to control API costs",
+      "Use streaming for better user experience on longer responses",
+      "Craft clear system prompts to guide AI behavior",
+      "Implement fallback responses for when AI services fail",
+      "Monitor token usage and costs in production"
     ],
-    relatedTutorials: ["nextjs-app-router", "performance-optimization"],
+    relatedTutorials: ["nextjs-app-router-guide", "performance-optimization"],
+    prevTutorial: "nextjs-app-router-guide",
+    nextTutorial: "tailwind-css-mastery"
   },
   {
     id: "4",
@@ -474,8 +497,11 @@ export function ChatInterface() {
       "Use arbitrary values sparingly and extract to config when reused",
       "Combine with CSS Grid for complex layouts without media queries",
       "Use aspect-ratio, object-fit, and container queries for responsive images",
+      "Keep bundle size small by purging unused styles in production"
     ],
-    relatedTutorials: ["framer-motion-animations", "performance-optimization"],
+    relatedTutorials: ["framer-motion-animations", "nextjs-app-router-guide"],
+    prevTutorial: "ai-integration-for-developers",
+    nextTutorial: "framer-motion-animations"
   },
   {
     id: "5",
@@ -635,8 +661,11 @@ export function ExpandingCard() {
       "Use layout animations sparingly - they can be expensive on complex layouts",
       "Prefer transform and opacity over layout-triggering properties",
       "Use spring physics (type: 'spring') for natural, responsive feel",
+      "Test animations on lower-powered devices for performance"
     ],
-    relatedTutorials: ["tailwind-css-mastery", "react-hooks-masterclass"],
+    relatedTutorials: ["tailwind-css-mastery", "performance-optimization"],
+    prevTutorial: "tailwind-css-mastery",
+    nextTutorial: "performance-optimization"
   },
   {
     id: "6",
@@ -793,13 +822,15 @@ export function OptimizedList({ items }: { items: any[] }) {
       }
     ],
     bestPractices: [
-      "Profile first with React DevTools before optimizing - don't guess",
-      "Use Next.js Image component with proper sizing and priority loading",
-      "Implement virtualization for lists with thousands of items",
-      "Lazy load below-the-fold content and non-critical components",
-      "Use the 'useMemo' and 'useCallback' dependency arrays correctly",
+      "Profile first with React DevTools before optimizing",
+      "Use React.memo for expensive components with stable props",
+      "Implement code splitting with dynamic imports for heavy features",
+      "Always use Next.js Image component for production images",
+      "Virtualize long lists to render only visible items",
+      "Monitor Core Web Vitals and set performance budgets"
     ],
-    relatedTutorials: ["nextjs-app-router", "tailwind-css-mastery"],
+    relatedTutorials: ["mastering-react-hooks", "nextjs-app-router-guide"],
+    prevTutorial: "framer-motion-animations"
   },
 ];
 
@@ -809,4 +840,20 @@ export function getTutorialBySlug(slug: string): Tutorial | undefined {
 
 export function getAllTutorials(): Tutorial[] {
   return tutorials;
+}
+
+export function getTutorialSlugs(): string[] {
+  return tutorials.map(t => t.slug);
+}
+
+export function getNextTutorial(currentSlug: string): Tutorial | undefined {
+  const current = getTutorialBySlug(currentSlug);
+  if (!current?.nextTutorial) return undefined;
+  return getTutorialBySlug(current.nextTutorial);
+}
+
+export function getPrevTutorial(currentSlug: string): Tutorial | undefined {
+  const current = getTutorialBySlug(currentSlug);
+  if (!current?.prevTutorial) return undefined;
+  return getTutorialBySlug(current.prevTutorial);
 }

@@ -64,7 +64,7 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <FluxUILogo3D size={48} />
+            <FluxUILogo3D className="w-12 h-12" />
             <span className="text-xl font-bold tracking-tight text-foreground">
               Flux<span className="text-primary">UI</span>
             </span>

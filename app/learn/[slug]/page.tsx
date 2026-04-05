@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { getTutorialBySlug, getAllTutorials, Tutorial } from "@/lib/data/tutorials";
+import { getTutorialBySlug, getAllTutorials, Tutorial, getNextTutorial, getPrevTutorial } from "@/lib/data/tutorials";
 import { CodeBlock } from "@/components/code-block";
 import { 
   Clock, 
   ChevronLeft,
+  ChevronRight,
   BookOpen,
   Target,
   Lightbulb,
@@ -40,10 +41,13 @@ export default async function TutorialPage({ params }: PageProps) {
     notFound();
   }
 
-  // Get related tutorials
+  // Get related, next, and prev tutorials
   const relatedTutorials = tutorial.relatedTutorials
     .map(slug => getAllTutorials().find(t => t.slug === slug))
     .filter((t): t is Tutorial => t !== undefined);
+  
+  const nextTutorial = getNextTutorial(slug);
+  const prevTutorial = getPrevTutorial(slug);
 
   return (
     <>
@@ -147,6 +151,67 @@ export default async function TutorialPage({ params }: PageProps) {
                     ))}
                   </div>
                 </section>
+
+                {/* Navigation - Previous/Next */}
+                <section className="mb-8 pt-8 border-t border-[#1a1a1a]">
+                  <div className="flex items-center justify-between gap-4">
+                    {prevTutorial ? (
+                      <Link
+                        href={`/learn/${prevTutorial.slug}`}
+                        className="group flex items-center gap-3 p-4 rounded-xl border border-[#1a1a1a] bg-[#0a0a0a] hover:border-[#00D9A3]/50 transition-all"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center group-hover:bg-[#00D9A3]/20 transition-colors">
+                          <ChevronLeft className="h-5 w-5 text-[#00D9A3]" />
+                        </div>
+                        <div className="text-left">
+                          <div className="text-xs text-gray-500">Previous Lesson</div>
+                          <div className="text-sm font-medium text-white group-hover:text-[#00D9A3] transition-colors line-clamp-1">
+                            {prevTutorial.title}
+                          </div>
+                        </div>
+                      </Link>
+                    ) : (
+                      <div /> // Spacer for alignment
+                    )}
+                    
+                    {nextTutorial ? (
+                      <Link
+                        href={`/learn/${nextTutorial.slug}`}
+                        className="group flex items-center gap-3 p-4 rounded-xl border border-[#1a1a1a] bg-[#0a0a0a] hover:border-[#00D9A3]/50 transition-all"
+                      >
+                        <div className="text-right">
+                          <div className="text-xs text-gray-500">Next Lesson</div>
+                          <div className="text-sm font-medium text-white group-hover:text-[#00D9A3] transition-colors line-clamp-1">
+                            {nextTutorial.title}
+                          </div>
+                        </div>
+                        <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center group-hover:bg-[#00D9A3]/20 transition-colors">
+                          <ChevronRight className="h-5 w-5 text-[#00D9A3]" />
+                        </div>
+                      </Link>
+                    ) : (
+                      <div /> // Spacer for alignment
+                    )}
+                  </div>
+                </section>
+
+                {/* CTA Section */}
+                <section className="mb-12">
+                  <div className="p-8 rounded-2xl border border-[#00D9A3]/30 bg-gradient-to-br from-[#00D9A3]/10 to-[#1E3A8A]/10 text-center">
+                    <h2 className="text-2xl font-bold text-white mb-4">
+                      Ready to Build Something Amazing?
+                    </h2>
+                    <p className="text-gray-400 mb-6 max-w-lg mx-auto">
+                      Put what you've learned into practice with FluxUI's premium components.
+                    </p>
+                    <Link
+                      href="/#featured-resources"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#00D9A3] text-black font-semibold hover:bg-[#00b382] transition-colors"
+                    >
+                      Start Building with FluxUI Components
+                    </Link>
+                  </div>
+                </section>
               </div>
 
               {/* Sidebar - Table of Contents */}
@@ -225,7 +290,12 @@ export default async function TutorialPage({ params }: PageProps) {
 
 // Generate static params for all tutorials
 export function generateStaticParams() {
-  return getAllTutorials().map((tutorial) => ({
-    slug: tutorial.slug,
-  }));
+  return [
+    { slug: 'mastering-react-hooks' },
+    { slug: 'nextjs-app-router-guide' },
+    { slug: 'ai-integration-for-developers' },
+    { slug: 'tailwind-css-mastery' },
+    { slug: 'framer-motion-animations' },
+    { slug: 'performance-optimization' },
+  ];
 }

@@ -28,13 +28,13 @@ export const metadata = {
   authors: [{ name: "FluxUI" }],
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
-      { url: "/icon-only.png", type: "image/png", sizes: "1024x1024" },
+      { url: "/icon-only.svg?v=2", type: "image/svg+xml", sizes: "any" },
+      { url: "/icon-only.png?v=2", type: "image/png", sizes: "1024x1024" },
     ],
     apple: [
-      { url: "/apple-touch-icon.svg", sizes: "180x180" },
+      { url: "/apple-touch-icon.svg?v=2", sizes: "180x180" },
     ],
-    shortcut: "/favicon.svg",
+    shortcut: "/icon-only.svg?v=2",
   },
   manifest: "/manifest.json",
   openGraph: {
@@ -46,7 +46,7 @@ export const metadata = {
     siteName: "FluxUI",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png?v=2",
         width: 1200,
         height: 630,
         alt: "FluxUI - Modern UI Components Framework",
@@ -58,7 +58,7 @@ export const metadata = {
     title: "FluxUI - Modern UI Components Framework",
     description:
       "Browse, preview, and download premium UI components and developer resources.",
-    images: ["/og-image.png"],
+    images: ["/og-image.png?v=2"],
   },
   robots: {
     index: true,
