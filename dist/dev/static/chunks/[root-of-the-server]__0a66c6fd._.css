@@ -942,6 +942,10 @@
     margin-block: calc(var(--spacing) * 8);
   }
 
+  .-mt-0 {
+    margin-top: calc(var(--spacing) * 0);
+  }
+
   .-mt-0\.5 {
     margin-top: calc(var(--spacing) * -.5);
   }
@@ -3343,12 +3347,24 @@
     key:  � ;
   }
 
+  .\[key\:\3 ���ng\] {
+    key:  ���ng;
+  }
+
   .\[key\:\11 \12 �\2 ng\] {
     key:   � ng;
   }
 
+  .\[key\:\16 Q4ng\] {
+    key:  Q4ng;
+  }
+
   .\[key\:\1a \12 4ng\] {
     key:   4ng;
+  }
+
+  .\[key\:Je\14 \] {
+    key: Je ;
   }
 
   .\[key\:b\^4ng\] {
@@ -3365,6 +3381,10 @@
 
   .\[key\:�\%�ng\] {
     key: �% �ng;
+  }
+
+  .\[key\:�9\14 \] {
+    key: �9 ;
   }
 
   .\[key\:��4ng\] {
@@ -4001,6 +4021,14 @@
   }
 
   .has-data-\[icon\=r\6 �end\]\:pr-2:has([data-icon="r\6 �end"]) {
+    padding-right: calc(var(--spacing) * 2);
+  }
+
+  .has-data-\[icon\=u۟end\]\:pr-2:has([data-icon="u۟end"]) {
+    padding-right: calc(var(--spacing) * 2);
+  }
+
+  .has-data-\[icon\=��end\]\:pr-2:has([data-icon="��end"]) {
     padding-right: calc(var(--spacing) * 2);
   }
 

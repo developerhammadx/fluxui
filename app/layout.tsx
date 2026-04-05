@@ -28,13 +28,14 @@ export const metadata = {
   authors: [{ name: "FluxUI" }],
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/icon-only.png", sizes: "1024x1024" },
+      { url: "/favicon.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-only.png", type: "image/png", sizes: "1024x1024" },
+      { url: "/logo-192.png", type: "image/png", sizes: "192x192" },
     ],
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180" },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: "/favicon.png",
   },
   manifest: "/manifest.json",
   openGraph: {
