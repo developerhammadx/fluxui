@@ -1,50 +1,7 @@
-[00:25:17.396] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open 'E:\Projects\FluxUI.dev\fluxui-dev\dist\dev\server\pages\_app\build-manifest.json'
-[00:25:17.413] Server  ERROR   TurbopackInternalError: Failed to write app endpoint /components/page
-
-Caused by:
-- Failed to restore task data (corrupted database or bug): Meta for ResolveOrigin::resolve_options (TaskId 286425))
-
-Debug info:
-- Execution of get_written_endpoint_with_issues_operation failed
-- Execution of endpoint_write_to_disk failed
-- Execution of <AppEndpoint as Endpoint>::output failed
-- Failed to write app endpoint /components/page
-- Execution of AppEndpoint::output failed
-- Execution of AppProject::app_module_graphs failed
-- Execution of find_server_entries failed
-- Execution of primary_chunkable_referenced_modules failed
-- Execution of <EsmAssetReference as ModuleReference>::resolve_reference failed
-- Failed to restore task data (corrupted database or bug): Meta for ResolveOrigin::resolve_options (TaskId 286425))
-  
-  Caused by:
-      0: Looking up data for TaskId 286425 from database failed
-      1: Unable to open static sorted file referenced from 00000063.meta
-      2: Unable to open static sorted file 00000058.sst
-      3: The system cannot find the path specified. (os error 3)
-[00:25:17.532] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open 'E:\Projects\FluxUI.dev\fluxui-dev\dist\dev\server\pages\_app\build-manifest.json'
-[00:25:17.599] Server  ERROR   Error: ENOENT: no such file or directory, open 'E:\Projects\FluxUI.dev\fluxui-dev\dist\dev\server\pages\_app\build-manifest.json'
-[00:25:17.763] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open 'E:\Projects\FluxUI.dev\fluxui-dev\dist\dev\server\pages\_app\build-manifest.json'
-[00:25:17.773] Server  ERROR   TurbopackInternalError: Failed to write app endpoint /components/page
-
-Caused by:
-- Failed to restore task data (corrupted database or bug): Meta for ResolveOrigin::resolve_options (TaskId 286425))
-
-Debug info:
-- Execution of get_written_endpoint_with_issues_operation failed
-- Execution of endpoint_write_to_disk failed
-- Execution of <AppEndpoint as Endpoint>::output failed
-- Failed to write app endpoint /components/page
-- Execution of AppEndpoint::output failed
-- Execution of AppProject::app_module_graphs failed
-- Execution of find_server_entries failed
-- Execution of primary_chunkable_referenced_modules failed
-- Execution of <EsmAssetReference as ModuleReference>::resolve_reference failed
-- Failed to restore task data (corrupted database or bug): Meta for ResolveOrigin::resolve_options (TaskId 286425))
-  
-  Caused by:
-      0: Looking up data for TaskId 286425 from database failed
-      1: Unable to open static sorted file referenced from 00000063.meta
-      2: Unable to open static sorted file 00000058.sst
-      3: The system cannot find the path specified. (os error 3)
-[00:25:17.871] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open 'E:\Projects\FluxUI.dev\fluxui-dev\dist\dev\server\pages\_app\build-manifest.json'
-[00:25:17.999] Server  ERROR   Error: ENOENT: no such file or directory, open 'E:\Projects\FluxUI.dev\fluxui-dev\dist\dev\server\pages\_app\build-manifest.json'
+[00:00:02.097] Server  LOG     ✓ Ready in 1418ms
+[00:00:08.687] Server  LOG     ○ Compiling / ...
+[00:00:14.754] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3001". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:00:16.516] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:28.004] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3001". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:03:32.655] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3001". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:03:33.175] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3001". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
