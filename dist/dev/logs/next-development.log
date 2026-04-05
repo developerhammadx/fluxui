@@ -276,3 +276,418 @@ https://nextjs.org/docs/messages/module-not-found
 [00:55:39.836] Server  LOG     ✓ Compiled in 878ms
 [00:56:27.309] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
 [00:56:27.353] Server  LOG     ✓ Compiled in 898ms
+[01:00:14.361] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:18.761] Server  ERROR   ⨯ ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+
+
+[01:00:18.897] Browser ERROR   ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+[01:00:18.926] Server  ERROR   ⨯ ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+
+
+[01:00:19.488] Browser ERROR   uncaughtError: Error: ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+
+
+[01:00:19.665] Browser ERROR   ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+[01:00:19.665] Browser ERROR   ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+[01:01:25.096] Browser ERROR   ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+[01:02:16.545] Server  ERROR   ⨯ ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+
+
+[01:02:16.959] Browser ERROR   uncaughtError: Error: ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+
+
+[01:02:17.168] Browser ERROR   ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+[01:02:17.272] Browser ERROR   ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+[01:02:19.689] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:02:19.934] Browser ERROR   ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+[01:02:19.934] Browser ERROR   ./app/learn/[slug]/page.tsx:342:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  340 |
+  341 | // Generate static params for all tutorials
+> 342 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |   return getAllTutorials().map((tutorial) => ({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |     slug: tutorial.slug,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |   }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 | }
+      | ^^
+  347 |
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./app/learn/[slug]/page.tsx [Client Component Browser]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/learn/[slug]/page.tsx [Client Component SSR]
+    ./app/learn/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+[01:04:34.589] Server  LOG     ✓ Compiled in 1097ms
+[01:04:35.161] Browser ERROR   ./app/learn/[slug]/page.tsx:17:10
+Ecmascript file had an error
+  15 | import Link from "next/link";
+  16 |
+> 17 | function CodeBlock({ 
+     |          ^^^^^^^^^
+  18 |   title, 
+  19 |   language, 
+  20 |   code, 
+
+the name `CodeBlock` is defined multiple times
+[01:05:47.619] Server  LOG     ✓ Compiled in 3s
+[01:09:07.470] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:11.989] Server  ERROR   ⨯ Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:09:14.011] Server  ERROR   ⨯ Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:09:14.599] Browser ERROR   uncaughtError: Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:09:17.928] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:20.926] Server  ERROR   ⨯ Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:09:22.361] Server  ERROR   ⨯ Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:09:22.816] Browser ERROR   uncaughtError: Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:09:27.710] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:32.930] Server  WARN    Error: Route "/learn/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:09:33.007] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[01:09:35.169] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:12:49.227] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:12:51.781] Server  WARN    Error: Route "/learn/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:12:52.790] Server  ERROR   ⨯ Failed to generate static paths for /learn/[slug]:
+[01:12:52.802] Server  ERROR   Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:14:27.353] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:15:49.199] Server  LOG     ✓ Compiled in 1289ms
+[01:15:56.433] Server  ERROR   ⨯ Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:15:58.136] Server  ERROR   ⨯ Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:15:58.671] Browser ERROR   uncaughtError: Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:16:02.126] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:05.406] Server  ERROR   ⨯ Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:16:07.203] Server  ERROR   ⨯ Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:16:07.820] Browser ERROR   uncaughtError: Error: Page "/learn/[slug]/page" is missing param "/learn/[slug]" in "generateStaticParams()", which is required with "output: export" config.
+[01:16:09.700] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

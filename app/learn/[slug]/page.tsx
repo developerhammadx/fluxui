@@ -1,99 +1,18 @@
-"use client";
-
-import { useParams, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { getTutorialBySlug, getAllTutorials, Tutorial } from "@/lib/data/tutorials";
-import { motion } from "framer-motion";
+import { CodeBlock } from "@/components/code-block";
 import { 
   Clock, 
-  ChevronLeft, 
-  ChevronRight,
+  ChevronLeft,
   BookOpen,
   Target,
   Lightbulb,
   Zap,
   CheckCircle,
-  Copy,
-  Check
 } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
-
-function CodeBlock({ 
-  title, 
-  language, 
-  code, 
-  explanation 
-}: { 
-  title: string; 
-  language: string; 
-  code: string; 
-  explanation?: string;
-}) {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  const getLanguageColor = (lang: string) => {
-    switch (lang) {
-      case 'tsx': return 'text-blue-400';
-      case 'html': return 'text-orange-400';
-      case 'css': return 'text-cyan-400';
-      default: return 'text-gray-400';
-    }
-  };
-
-  return (
-    <div className="my-8 rounded-xl border border-[#1a1a1a] bg-[#0a0a0a] overflow-hidden">
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-[#1a1a1a] bg-[#111]">
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-medium text-gray-300">{title}</span>
-          <span className={`text-xs px-2 py-1 rounded bg-[#1a1a1a] ${getLanguageColor(language)}`}>
-            {language}
-          </span>
-        </div>
-        <button
-          onClick={handleCopy}
-          className="flex items-center gap-2 text-xs text-gray-500 hover:text-[#00D9A3] transition-colors"
-        >
-          {copied ? (
-            <>
-              <Check className="h-4 w-4" />
-              <span>Copied!</span>
-            </>
-          ) : (
-            <>
-              <Copy className="h-4 w-4" />
-              <span>Copy</span>
-            </>
-          )}
-        </button>
-      </div>
-      
-      {/* Code */}
-      <div className="p-4 overflow-x-auto">
-        <pre className="text-sm font-mono text-gray-300 leading-relaxed">
-          <code>{code}</code>
-        </pre>
-      </div>
-      
-      {/* Explanation */}
-      {explanation && (
-        <div className="px-4 py-3 border-t border-[#1a1a1a] bg-[#111]/50">
-          <p className="text-sm text-gray-400">
-            <span className="text-[#00D9A3] font-medium">💡 Tip:</span> {explanation}
-          </p>
-        </div>
-      )}
-    </div>
-  );
-}
 
 function DifficultyBadge({ level }: { level: string }) {
   const colors = {
@@ -109,9 +28,12 @@ function DifficultyBadge({ level }: { level: string }) {
   );
 }
 
-export default function TutorialPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export default async function TutorialPage({ params }: PageProps) {
+  const { slug } = await params;
   const tutorial = getTutorialBySlug(slug);
 
   if (!tutorial) {
@@ -130,12 +52,7 @@ export default function TutorialPage() {
         {/* Hero Section */}
         <div className="relative pt-32 pb-16">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            {/* Back Link */}
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-8"
-            >
+            <div className="mb-8">
               <Link 
                 href="/#master-code" 
                 className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#00D9A3] transition-colors"
@@ -143,15 +60,9 @@ export default function TutorialPage() {
                 <ChevronLeft className="h-4 w-4" />
                 Back to Tutorials
               </Link>
-            </motion.div>
+            </div>
 
-            {/* Title & Meta */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="mb-12"
-            >
+            <div className="mb-12">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="text-sm text-[#00D9A3] font-medium">
                   {tutorial.category}
@@ -170,23 +81,15 @@ export default function TutorialPage() {
               <p className="mt-4 text-xl text-gray-400 leading-relaxed">
                 {tutorial.description}
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
 
-        {/* Content */}
         <div className="pb-20">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-[1fr_280px] gap-12">
-              {/* Main Content */}
               <div className="prose prose-invert max-w-none">
-                {/* Introduction */}
-                <motion.section
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="mb-12"
-                >
+                <section className="mb-12">
                   <div className="flex items-center gap-2 mb-4">
                     <BookOpen className="h-5 w-5 text-[#00D9A3]" />
                     <h2 className="text-2xl font-bold text-white">Introduction</h2>
@@ -194,15 +97,9 @@ export default function TutorialPage() {
                   <p className="text-gray-300 leading-relaxed text-lg">
                     {tutorial.introduction}
                   </p>
-                </motion.section>
+                </section>
 
-                {/* Core Concepts */}
-                <motion.section
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="mb-12"
-                >
+                <section className="mb-12">
                   <div className="flex items-center gap-2 mb-6">
                     <Target className="h-5 w-5 text-[#00D9A3]" />
                     <h2 className="text-2xl font-bold text-white">Core Concepts</h2>
@@ -218,15 +115,9 @@ export default function TutorialPage() {
                       </div>
                     ))}
                   </div>
-                </motion.section>
+                </section>
 
-                {/* Code Examples */}
-                <motion.section
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="mb-12"
-                >
+                <section className="mb-12">
                   <div className="flex items-center gap-2 mb-6">
                     <Lightbulb className="h-5 w-5 text-[#00D9A3]" />
                     <h2 className="text-2xl font-bold text-white">Code Examples</h2>
@@ -240,15 +131,9 @@ export default function TutorialPage() {
                       explanation={example.explanation}
                     />
                   ))}
-                </motion.section>
+                </section>
 
-                {/* Best Practices */}
-                <motion.section
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                  className="mb-12"
-                >
+                <section className="mb-12">
                   <div className="flex items-center gap-2 mb-6">
                     <Zap className="h-5 w-5 text-[#00D9A3]" />
                     <h2 className="text-2xl font-bold text-white">Best Practices</h2>
@@ -261,7 +146,7 @@ export default function TutorialPage() {
                       </div>
                     ))}
                   </div>
-                </motion.section>
+                </section>
               </div>
 
               {/* Sidebar - Table of Contents */}
